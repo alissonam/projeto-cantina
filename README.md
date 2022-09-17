@@ -15,6 +15,8 @@ A estrutura do projeto após o setup está demonstrada abaixo:
   | > database (caso possua)
 ```
 
+Lembrando que para rota o comando abaixo, terá antes que copiar o conteúdo do arquivo .env.example para um arquivo .env(criar esse arquivo na raiz do projeto).
+
 O comando abaixo realiza o setup no ambiente local:
 
 ```shell
