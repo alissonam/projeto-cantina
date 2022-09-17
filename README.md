@@ -1,9 +1,3 @@
-# Projeto base
-
-O projeto base possui a estrutura inicial para inicialização de um projeto.
-
----
-
 ## Setup e automações
 
 Abaixo se encontram os passos para SETUP e demais comandos disponíveis.
