@@ -1,9 +1,3 @@
-# Projeto base
-
-O projeto base possui a estrutura inicial para inicialização de um projeto.
-
----
-
 ## Setup e automações
 
 Abaixo se encontram os passos para SETUP e demais comandos disponíveis.
@@ -20,6 +14,8 @@ A estrutura do projeto após o setup está demonstrada abaixo:
   | > frontend
   | > database (caso possua)
 ```
+
+Lembrando que para rota o comando abaixo, terá antes que copiar o conteúdo do arquivo .env.example para um arquivo .env(criar esse arquivo na raiz do projeto).
 
 O comando abaixo realiza o setup no ambiente local:
 
