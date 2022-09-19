@@ -29,22 +29,16 @@ const permissions = [
     path: '/permissions',
     name: 'permissions',
     component: () => import('pages/Permissions/PermissionsList'),
-    beforeEnter: checkPermission,
-    meta: { permission: 'permissions' }
   },
   {
     path: '/permissions/create',
     name: 'permissions_create',
     component: () => import('pages/Permissions/PermissionsForm'),
-    beforeEnter: checkPermission,
-    meta: { permission: 'permissions' }
   },
   {
     path: '/permissions/update/:id',
     name: 'permissions_update',
     component: () => import('pages/Permissions/PermissionsForm'),
-    beforeEnter: checkPermission,
-    meta: { permission: 'permissions' }
   }
 ]
 
@@ -53,22 +47,16 @@ const users = [
     path: '/users',
     name: 'users',
     component: () => import('pages/Users/UsersList'),
-    beforeEnter: checkPermission,
-    meta: { permission: 'users' }
   },
   {
     path: '/users/create',
     name: 'users_create',
     component: () => import('pages/Users/UsersForm'),
-    beforeEnter: checkPermission,
-    meta: { permission: 'users' }
   },
   {
     path: '/users/update/:id',
     name: 'users_update',
     component: () => import('pages/Users/UsersForm'),
-    beforeEnter: checkPermission,
-    meta: { permission: 'users' }
   }
 ]
 
