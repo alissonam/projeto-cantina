@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->enum('role', ['admin', 'member'])
                 ->default('admin');
+            $table->integer('ra')->unique();
+            $table->decimal('credits')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('status', ['pending_password', 'active', 'blocked', 'blocked_by_time'])

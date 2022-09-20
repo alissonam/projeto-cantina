@@ -6,6 +6,7 @@ use App\Http\Services\Service;
 use App\Mail\SendEmailToResetPassword;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -229,5 +230,35 @@ class UserService extends Service
         // }
 
         return $filters;
+    }
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    public function register(array $data)
+    {
+        DB::beginTransaction();
+        try {
+            self::prepareData($data, [
+                'ra' => fn($value) => self::onlyNumbers($value),
+            ]);
+
+            $data['password'] = bcrypt(Carbon::now()->timestamp);
+            $data['permission_id'] = 3;
+            $data['role'] = 'member';
+
+            $user = User::create($data);
+
+            $token = $user->createToken('Create password');
+            Mail::to($user->email)->send(new SendEmailToResetPassword($user, $token));
+
+            DB::commit();
+        } catch (\Throwable $t) {
+            DB::rollBack();
+            throw self::exception(['message' => 'Falha ao registrar usuário']);
+        }
+
+        return self::buildReturn($user);
     }
 }

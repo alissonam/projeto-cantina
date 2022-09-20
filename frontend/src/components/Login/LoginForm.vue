@@ -42,14 +42,27 @@
           Esqueci minha senha
         </a>
       </div>
-      <div class="text-right padding q-pa-sm">
-        <q-btn
-          type="submit"
-          class="q-ma-sm"
-          color="primary"
-          outline
-          label="Logar"
-        />
+      <div class="row justify-between">
+        <div class="text-right padding q-pa-sm">
+          <q-btn
+            class="q-ma-sm"
+            color="primary"
+            outline
+            rounded
+            label="Registrar-se"
+            @click="goToRegister()"
+          />
+        </div>
+        <div class="text-right padding q-pa-sm">
+          <q-btn
+            type="submit"
+            class="q-ma-sm"
+            color="primary"
+            outline
+            rounded
+            label="Logar"
+          />
+        </div>
       </div>
     </div>
   </q-form>
@@ -97,6 +110,10 @@ const login = async function () {
       type: 'negative'
     })
   }
+}
+
+function goToRegister() {
+  router.push({ name: 'register' })
 }
 </script>
 

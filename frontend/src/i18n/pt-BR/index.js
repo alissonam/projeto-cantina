@@ -17,6 +17,7 @@ export default {
   permissions: {
     users: 'Usuários',
     permissions:'Permissões',
+    products: 'Produtos',
   },
   categories: {
     create_user: 'Criação de Usuário',

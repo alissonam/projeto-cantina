@@ -31,6 +31,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'ra',
+        'credits',
         'status',
         'permission_id',
         'login_time',

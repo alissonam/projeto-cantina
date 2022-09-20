@@ -43,6 +43,8 @@ class UserRequest extends Request
             'email'         => 'required|string|email|unique:users',
             'name'          => 'required',
             'role'          => 'required',
+            'ra'            => 'required',
+            'credits'       => 'nullable',
             'permission_id' => 'required',
             'password'      => 'nullable|string|min:6',
             'login_time'    => 'nullable|integer',
@@ -64,6 +66,8 @@ class UserRequest extends Request
             'email'         => 'string|email',
             'name'          => '',
             'role'          => '',
+            'ra'            => '',
+            'credits'       => '',
             'permission_id' => '',
             'password'      => 'nullable|string|min:6',
             'login_time'    => 'nullable|integer',
@@ -98,6 +102,18 @@ class UserRequest extends Request
                     ->uncompromised(),
                 'confirmed'
             ],
+        ];
+    }
+
+    /**
+     * @return string[]
+     */
+    public function validateToRegister()
+    {
+        return [
+            'name'          => 'required',
+            'email'         => 'required|string|email|unique:users',
+            'ra'            => 'required|string|unique:users',
         ];
     }
 }

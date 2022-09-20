@@ -29,16 +29,22 @@ const permissions = [
     path: '/permissions',
     name: 'permissions',
     component: () => import('pages/Permissions/PermissionsList'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'permissions' }
   },
   {
     path: '/permissions/create',
     name: 'permissions_create',
     component: () => import('pages/Permissions/PermissionsForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'permissions' }
   },
   {
     path: '/permissions/update/:id',
     name: 'permissions_update',
     component: () => import('pages/Permissions/PermissionsForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'permissions' }
   }
 ]
 
@@ -47,16 +53,46 @@ const users = [
     path: '/users',
     name: 'users',
     component: () => import('pages/Users/UsersList'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'users' }
   },
   {
     path: '/users/create',
     name: 'users_create',
     component: () => import('pages/Users/UsersForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'users' }
   },
   {
     path: '/users/update/:id',
     name: 'users_update',
     component: () => import('pages/Users/UsersForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'users' }
+  }
+]
+
+const products = [
+  {
+    path: '/products',
+    name: 'products',
+    component: () => import('pages/Products/ProductsList'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'products' }
+  },
+  {
+    path: '/products/create',
+    name: 'products_create',
+    component: () => import('pages/Products/ProductsForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'products' }
+  },
+  {
+    path: '/products/update/:id',
+    name: 'products_update',
+    component: () => import('pages/Products/ProductsForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'products' }
   }
 ]
 
@@ -78,6 +114,7 @@ const routes = [
       },
       ...permissions,
       ...users,
+      ...products,
     ]
   },
   {
@@ -96,6 +133,11 @@ const routes = [
     path: '/:catchAll(.*)*',
     component: () => import('pages/Error404')
   },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('pages/Register/PageRegisterUser')
+  }
 ]
 
 export default routes
