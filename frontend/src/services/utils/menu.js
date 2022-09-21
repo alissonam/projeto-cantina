@@ -18,6 +18,14 @@ const generalItems = [
     permission: "products"
   },
   {
+    label: 'Pedidos',
+    icon: 'o_shopping_cart',
+    to: {
+      name: 'orders'
+    },
+    permission: "orders"
+  },
+  {
     label: 'Acesso ao Sistema',
     icon: 'o_manage_accounts',
     children: [

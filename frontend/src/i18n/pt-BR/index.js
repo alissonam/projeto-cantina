@@ -18,6 +18,15 @@ export default {
     users: 'Usuários',
     permissions:'Permissões',
     products: 'Produtos',
+    orders: 'Pedidos',
+    items: 'Items'
+  },
+  order: {
+    status: {
+      canceled: 'Cancelado',
+      pending: 'Pendente',
+      concluded: 'Finalizado'
+    }
   },
   categories: {
     create_user: 'Criação de Usuário',
@@ -25,5 +34,5 @@ export default {
     hardware: 'Hardware',
     software: 'Software',
     network: 'Rede',
-  }
+  },
 }

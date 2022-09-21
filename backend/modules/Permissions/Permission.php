@@ -14,6 +14,8 @@ class Permission extends Model
         'users',
         'permissions',
         'products',
+        'orders',
+        'items'
     ];
 
     /**

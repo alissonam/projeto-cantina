@@ -245,7 +245,7 @@ class UserService extends Service
             ]);
 
             $data['password'] = bcrypt(Carbon::now()->timestamp);
-            $data['permission_id'] = 3;
+            $data['permission_id'] = 2;
             $data['role'] = 'member';
 
             $user = User::create($data);

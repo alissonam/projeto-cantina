@@ -96,6 +96,30 @@ const products = [
   }
 ]
 
+const orders = [
+  {
+    path: '/orders',
+    name: 'orders',
+    component: () => import('pages/Orders/OrdersList'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'orders' }
+  },
+  {
+    path: '/orders/create',
+    name: 'orders_create',
+    component: () => import('pages/Orders/OrdersForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'orders' }
+  },
+  {
+    path: '/orders/update/:id',
+    name: 'orders_update',
+    component: () => import('pages/Orders/OrdersForm'),
+    beforeEnter: checkPermission,
+    meta: { permission: 'orders' }
+  }
+]
+
 const routes = [
   {
     path: '/',
@@ -115,6 +139,7 @@ const routes = [
       ...permissions,
       ...users,
       ...products,
+      ...orders,
     ]
   },
   {
